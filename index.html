@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Electrical & Energy Management System (EEMS) untuk CV/PT.">
+<meta name="theme-color" content="#08111f">
+<title>EEMS — Electrical & Energy Management System</title>
+<style>
+:root{--navy:#08111f;--navy2:#0d1a2d;--panel:#101f33;--gold:#d4af37;--gold2:#f0d77a;--white:#f7f8fa;--muted:#aab5c4;--line:rgba(212,175,55,.25);--green:#58c78a}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--navy);color:var(--white);line-height:1.65}
+a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(8,17,31,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em}
+.brand-mark{width:40px;height:40px;border:1px solid var(--gold);border-radius:10px;display:grid;place-items:center;color:var(--gold2);font-weight:900}
+.nav-links{display:flex;gap:24px;font-size:.88rem;color:var(--muted)}.nav-links a:hover{color:var(--gold2)}
+.hero{position:relative;overflow:hidden;padding:110px 0 95px;background:radial-gradient(circle at 80% 20%,rgba(212,175,55,.13),transparent 32%),linear-gradient(135deg,var(--navy),var(--navy2))}
+.eyebrow,.kicker{color:var(--gold2);font-weight:800;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.eyebrow{display:inline-flex;border:1px solid var(--line);padding:7px 14px;border-radius:999px;margin-bottom:22px}
+h1{max-width:850px;font-size:clamp(2.35rem,6vw,5rem);line-height:1.03;letter-spacing:-.045em}h1 span,.gold{color:var(--gold2)}
+.hero-lead{max-width:760px;color:var(--muted);font-size:1.12rem;margin:26px 0 34px}
+.actions{display:flex;flex-wrap:wrap;gap:14px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:10px;font-weight:800;font-size:.9rem;transition:.25s}
+.btn-primary{background:var(--gold);color:#101010}.btn-primary:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-outline{border:1px solid rgba(255,255,255,.18)}.btn-outline:hover{border-color:var(--gold);color:var(--gold2)}
+section{padding:90px 0}.problem,.dashboard{background:#0a1525}
+.section-head{max-width:760px;margin-bottom:45px}.section-head p{color:var(--muted);margin-top:15px}
+h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.12;letter-spacing:-.03em}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:linear-gradient(145deg,var(--panel),#0c192b);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.22)}
+.card-number{color:var(--gold);font-size:.8rem;font-weight:900;letter-spacing:.1em}.card h3{margin:12px 0 9px;font-size:1.15rem}.card p,.card li{color:var(--muted);font-size:.93rem}.card ul{padding-left:18px;margin-top:13px}
+.system{background:linear-gradient(180deg,#0d1a2d,#08111f)}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:35px}
+.flow-item{position:relative;padding:25px 16px;text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:14px}
+.flow-item:not(:last-child):after{content:"→";position:absolute;right:-16px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:22px;z-index:2}
+.flow-icon{width:42px;height:42px;margin:0 auto 12px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;color:var(--gold2);font-weight:900}
+.flow-item strong{display:block;font-size:.9rem}.flow-item small{display:block;color:var(--muted);margin-top:6px;font-size:.76rem}
+.scope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.scope-card{padding:27px;border-left:3px solid var(--gold);background:rgba(255,255,255,.035);border-radius:0 14px 14px 0}.scope-card h3{margin-bottom:8px}.scope-card p{color:var(--muted);font-size:.92rem}
+.deliverables{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.deliverable{text-align:center;padding:25px 15px;border:1px solid rgba(255,255,255,.08);border-radius:15px;background:var(--panel)}.deliverable strong{display:block;color:var(--gold2);margin-top:10px}
+.dashboard-box{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.metric{padding:20px;background:#0b1728;border-radius:12px;border:1px solid rgba(255,255,255,.06)}.metric span{color:var(--muted);font-size:.75rem}.metric strong{display:block;font-size:1.45rem;margin-top:5px}.metric.good strong{color:var(--green)}
+.cta{text-align:center;background:radial-gradient(circle at 50% 0%,rgba(212,175,55,.13),transparent 40%),#08111f}.cta p{max-width:690px;margin:17px auto 28px;color:var(--muted)}
+footer{border-top:1px solid rgba(255,255,255,.08);padding:35px 0;color:#8490a0;font-size:.8rem}.footer-flex{display:flex;justify-content:space-between;gap:20px;align-items:center}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr}.flow-item:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-22px;transform:translateX(50%)}.deliverables{grid-template-columns:1fr 1fr}.metric-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.nav-links{display:none}.hero{padding:80px 0}section{padding:70px 0}.grid-3,.scope-grid{grid-template-columns:1fr}.deliverables{grid-template-columns:1fr 1fr}.footer-flex{flex-direction:column;text-align:center}h1{font-size:2.55rem}}
+@media(max-width:430px){.deliverables{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a href="#top" class="brand"><span class="brand-mark">E</span><span>EEMS</span></a>
+<nav class="nav-links"><a href="#layanan">Layanan</a><a href="#sistem">Sistem</a><a href="#output">Output</a><a href="#kontak">Konsultasi</a></nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="container">
+<div class="eyebrow">Professional Electrical Management</div>
+<h1>Electrical & Energy<br><span>Management System</span></h1>
+<p class="hero-lead">Sistem pengelolaan kelistrikan dan energi untuk membantu CV/PT menjaga keandalan listrik, keselamatan instalasi, efisiensi energi, serta pengendalian biaya operasional secara terukur.</p>
+<div class="actions"><a href="#layanan" class="btn btn-primary">Lihat Sistem EEMS</a><a href="#kontak" class="btn btn-outline">Konsultasi Awal</a></div>
+</div></section>
+
+<section class="problem"><div class="container">
+<div class="section-head"><div class="kicker">Mengapa EEMS?</div><h2>Listrik bukan hanya biaya. Ia adalah aset operasional perusahaan.</h2><p>Gangguan listrik dapat menghentikan produksi, merusak peralatan, meningkatkan biaya, dan menciptakan risiko keselamatan. EEMS mengubah pengelolaan listrik menjadi sistem yang dapat dipantau dan dipertanggungjawabkan.</p></div>
+<div class="grid-3">
+<article class="card"><div class="card-number">01 / RELIABILITY</div><h3>Keandalan Operasional</h3><p>Menata sumber, distribusi, proteksi, backup power, dan pemeliharaan agar gangguan dapat dikurangi.</p></article>
+<article class="card"><div class="card-number">02 / EFFICIENCY</div><h3>Efisiensi Energi</h3><p>Mengidentifikasi pola konsumsi dan peluang penghematan berdasarkan data, bukan sekadar perkiraan.</p></article>
+<article class="card"><div class="card-number">03 / CONTROL</div><h3>Kontrol Manajemen</h3><p>Direksi memperoleh gambaran kondisi aset, konsumsi energi, gangguan, dan kebutuhan investasi.</p></article>
+</div></div></section>
+
+<section id="layanan"><div class="container">
+<div class="section-head"><div class="kicker">Lima Tahap Utama</div><h2>Audit → Implementasi → Monitoring → Maintenance → Laporan</h2><p>EEMS dirancang sebagai siklus berkelanjutan, bukan pekerjaan sekali datang kemudian selesai.</p></div>
+<div class="grid-3">
+<article class="card"><div class="card-number">01</div><h3>Audit Kelistrikan</h3><ul><li>Pemetaan instalasi dan panel</li><li>Inventarisasi beban</li><li>Pemeriksaan kondisi sistem</li><li>Identifikasi risiko dan prioritas</li></ul></article>
+<article class="card"><div class="card-number">02</div><h3>Implementasi</h3><ul><li>Perbaikan dan penataan sistem</li><li>Dokumentasi distribusi</li><li>Penataan proteksi</li><li>Rekomendasi investasi</li></ul></article>
+<article class="card"><div class="card-number">03</div><h3>Monitoring</h3><ul><li>Pemantauan konsumsi energi</li><li>Evaluasi beban</li><li>Analisis tren biaya</li><li>Indikator kinerja energi</li></ul></article>
+<article class="card"><div class="card-number">04</div><h3>Maintenance</h3><ul><li>Preventive maintenance</li><li>Corrective maintenance</li><li>Jadwal inspeksi</li><li>Histori gangguan dan perbaikan</li></ul></article>
+<article class="card"><div class="card-number">05</div><h3>Laporan Manajemen</h3><ul><li>Ringkasan kondisi sistem</li><li>Konsumsi dan biaya energi</li><li>Gangguan dan tindakan</li><li>Rekomendasi manajemen</li></ul></article>
+<article class="card"><div class="card-number">06</div><h3>Evaluasi Berkelanjutan</h3><ul><li>Review berkala</li><li>Prioritas perbaikan</li><li>Rencana pengembangan kapasitas</li><li>Pengendalian biaya jangka panjang</li></ul></article>
+</div></div></section>
+
+<section id="sistem" class="system"><div class="container">
+<div class="section-head"><div class="kicker">Skema Kerja</div><h2>Satu sistem. Lima fungsi utama.</h2><p>Setiap tahap menghasilkan data yang menjadi dasar bagi tahap berikutnya.</p></div>
+<div class="flow">
+<div class="flow-item"><div class="flow-icon">A</div><strong>AUDIT</strong><small>Ketahui kondisi nyata</small></div>
+<div class="flow-item"><div class="flow-icon">I</div><strong>IMPLEMENTASI</strong><small>Benahi sistem prioritas</small></div>
+<div class="flow-item"><div class="flow-icon">M</div><strong>MONITORING</strong><small>Ukur dan kendalikan</small></div>
+<div class="flow-item"><div class="flow-icon">MT</div><strong>MAINTENANCE</strong><small>Cegah kerusakan</small></div>
+<div class="flow-item"><div class="flow-icon">R</div><strong>REPORTING</strong><small>Laporkan kepada manajemen</small></div>
+</div></div></section>
+
+<section><div class="container">
+<div class="section-head"><div class="kicker">Ruang Lingkup</div><h2>Apa saja yang dikelola?</h2></div>
+<div class="scope-grid">
+<div class="scope-card"><h3>Sumber & Distribusi</h3><p>PLN, genset, panel utama, panel distribusi, jalur dan pembagian beban.</p></div>
+<div class="scope-card"><h3>Proteksi & Keselamatan</h3><p>MCB/MCCB, proteksi kebocoran, grounding, kondisi kabel, panel dan prosedur keselamatan.</p></div>
+<div class="scope-card"><h3>Beban & Peralatan</h3><p>Mesin produksi, AC, pompa, komputer, penerangan dan peralatan listrik lainnya.</p></div>
+<div class="scope-card"><h3>Energi & Biaya</h3><p>Konsumsi kWh, pola pemakaian, beban puncak, biaya dan peluang efisiensi.</p></div>
+<div class="scope-card"><h3>Backup Power</h3><p>Evaluasi kebutuhan genset, UPS dan sistem backup untuk beban-beban kritis.</p></div>
+<div class="scope-card"><h3>Dokumentasi</h3><p>Single Line Diagram, daftar aset, jadwal maintenance, histori gangguan dan laporan.</p></div>
+</div></div></section>
+
+<section id="output" class="dashboard"><div class="container">
+<div class="section-head"><div class="kicker">Management Dashboard</div><h2>Manajemen menerima informasi yang bisa ditindaklanjuti.</h2><p>Contoh tampilan indikator. Angka di bawah hanya ilustrasi, bukan hasil pengukuran perusahaan tertentu.</p></div>
+<div class="dashboard-box"><div class="metric-grid">
+<div class="metric"><span>Konsumsi Energi</span><strong>17.200 kWh</strong></div>
+<div class="metric good"><span>Efisiensi</span><strong>−7%</strong></div>
+<div class="metric"><span>Gangguan</span><strong>3 Kasus</strong></div>
+<div class="metric"><span>Maintenance</span><strong>11 / 12</strong></div>
+</div></div></div></section>
+
+<section><div class="container">
+<div class="section-head"><div class="kicker">Output Profesional</div><h2>Hasil yang diterima perusahaan</h2></div>
+<div class="deliverables">
+<div class="deliverable"><div class="gold">01</div><strong>Electrical Audit Report</strong></div>
+<div class="deliverable"><div class="gold">02</div><strong>Electrical Asset Register</strong></div>
+<div class="deliverable"><div class="gold">03</div><strong>Maintenance Schedule</strong></div>
+<div class="deliverable"><div class="gold">04</div><strong>Energy Management Report</strong></div>
+<div class="deliverable"><div class="gold">05</div><strong>Risk & Priority List</strong></div>
+<div class="deliverable"><div class="gold">06</div><strong>Cost Control Analysis</strong></div>
+<div class="deliverable"><div class="gold">07</div><strong>Management Dashboard</strong></div>
+<div class="deliverable"><div class="gold">08</div><strong>Improvement Roadmap</strong></div>
+</div></div></section>
+
+<section id="kontak" class="cta"><div class="container">
+<div class="kicker">EEMS for CV / PT</div>
+<h2>Kelola listrik dengan data.<br><span class="gold">Ambil keputusan dengan lebih terukur.</span></h2>
+<p>Mulai dari audit kondisi kelistrikan, pemetaan aset dan beban, hingga monitoring energi, maintenance dan laporan untuk manajemen.</p>
+<div class="actions" style="justify-content:center"><a href="mailto:info@eems-indonesia.id" class="btn btn-primary">Ajukan Konsultasi</a><a href="#top" class="btn btn-outline">Kembali ke Atas</a></div>
+</div></section>
+</main>
+
+<footer><div class="container footer-flex"><div><strong class="gold">EEMS</strong> — Electrical & Energy Management System</div><div>© 2026 · Professional Electrical Management</div></div></footer>
+</body>
+  </html>
+                                                                                       
